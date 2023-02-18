@@ -1,19 +1,17 @@
 import React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
+import { Searchbar } from "react-native-paper";
 
 console.log(StatusBar.currentHeight);
 export default function App() {
   return (
     <>
-      <SafeAreaView style={{ flex: 1, marginTop: StatusBar.currentHeight }}>
+      <SafeAreaView style={styles.container}>
         <View style={styles.container}>
           <View style={styles.searchContainer}>
             <Text style={styles.searchHeaderTitle}>Search</Text>
-            <Text>Test shrinking of flexbox</Text>
-            <Text>Test shrinking of flexbox</Text>
-            <Text>Test shrinking of flexbox</Text>
-            <Text>Test shrinking of flexbox</Text>
+            <Searchbar />
           </View>
           <View style={styles.listContainer}>
             <View style={styles.listheader}>
@@ -30,6 +28,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: StatusBar.currentHeight,
   },
   searchContainer: {
     backgroundColor: "green",
