@@ -9,7 +9,7 @@ const SafeArea = styled(SafeAreaView)`
 `;
 
 const SearchContainer = styled.View`
-  background-color: green;
+  background-color: ${(props) => props.theme.colors.ui.error};
   padding: 16px;
 `;
 
