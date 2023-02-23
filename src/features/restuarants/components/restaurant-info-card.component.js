@@ -1,8 +1,14 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Avatar, Button, Card, Text } from "react-native-paper";
+import styled from "styled-components";
 
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
+
+const Title = styled.Text`
+  color: purple;
+  padding: 20px;
+`;
 
 // restaurant needs to be passed in empty then set the defaults
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
@@ -22,6 +28,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       <View style={styles.imageContainer}>
         <Card.Cover key={name} source={{ uri: photos[0] }} />
       </View>
+      <Title>{address}</Title>
       <Card.Title title={name} subtitle={openingHours} left={LeftContent} />
       {/* <Card.Content>
         <Text variant="titleLarge">Card title</Text>
