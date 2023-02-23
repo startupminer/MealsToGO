@@ -10,6 +10,10 @@ const Title = styled.Text`
   padding: 20px;
 `;
 
+const ImageView = styled.View`
+  padding: 20px;
+`;
+
 // restaurant needs to be passed in empty then set the defaults
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
@@ -24,10 +28,10 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     isClosedTemporarily,
   } = restaurant;
   return (
-    <Card style={styles.card}>
-      <View style={styles.imageContainer}>
+    <Card>
+      <ImageView>
         <Card.Cover key={name} source={{ uri: photos[0] }} />
-      </View>
+      </ImageView>
       <Title>{address}</Title>
       <Card.Title title={name} subtitle={openingHours} left={LeftContent} />
       {/* <Card.Content>
@@ -37,12 +41,3 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     </Card>
   );
 };
-
-const styles = StyleSheet.create({
-  imageContainer: {
-    padding: 20,
-  },
-  card: {
-    backgroundColor: "white",
-  },
-});
