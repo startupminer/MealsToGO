@@ -6,12 +6,12 @@ import styled from "styled-components";
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
 const Title = styled.Text`
-  color: purple;
-  padding: 20px;
+  color: ${(props) => props.theme.colors.ui.primary};
+  padding: ${(props) => props.theme.space[2]};
 `;
 
 const ImageView = styled.View`
-  padding: 20px;
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 // restaurant needs to be passed in empty then set the defaults
