@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { RestaurantScreen } from "./src/features/restuarants/screens/restaurant.screen";
 

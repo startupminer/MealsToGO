@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { View } from "react-native";
 import styled from "styled-components/native";
 
@@ -32,7 +32,7 @@ const getVariant = (position, size, theme) => {
 
 // }
 
-export const Spacer = styled.View`
+export const Spacer = styled(View)`
   ${({ position, size, theme }) => getVariant(position, size, theme)}
 `;
 

@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
+import * as React from "react";
+import { View, SafeAreaView, StatusBar } from "react-native";
 import { Searchbar } from "react-native-paper";
 import styled from "styled-components";
 
@@ -8,12 +8,12 @@ const SafeArea = styled(SafeAreaView)`
   ${StatusBar.currentHeight && "margintop: ${StatusBar.currentHeight}px"};
 `;
 
-const SearchContainer = styled.View`
+const SearchContainer = styled(View)`
   background-color: ${(props) => props.theme.colors.bg.primary};
   padding: ${(props) => props.theme.space[2]};
 `;
 
-const RestuarantListContainer = styled.View`
+const RestuarantListContainer = styled(View)`
   flex: 1;
   background-color: ${(props) => props.theme.colors.bg.primary};
   padding: ${(props) => props.theme.space[2]};
@@ -26,9 +26,6 @@ export const RestaurantScreen = () => (
     </SearchContainer>
 
     <RestuarantListContainer>
-      {/* <View style={styles.listheader}>
-          <Text style={styles.listHeaderTitle}>List</Text>
-        </View> */}
       <RestaurantInfoCard />
     </RestuarantListContainer>
   </SafeArea>
