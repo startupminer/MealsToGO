@@ -1,5 +1,4 @@
-import React, { Text, View } from "react";
-import { styled } from "styled-components/native";
+import styled from "styled-components/native";
 
 export const InfoDescription = styled.Text`
   font-family: ${(props) => props.theme.fonts.body};
