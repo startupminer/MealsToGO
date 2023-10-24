@@ -32,7 +32,7 @@ const getVariant = (position, size, theme) => {
 
 // }
 
-export const Spacer = styled(View)`
+export const Spacer = styled.View`
   ${({ position, size, theme }) => getVariant(position, size, theme)}
 `;
 

@@ -8,12 +8,12 @@ const SafeArea = styled(SafeAreaView)`
   ${StatusBar.currentHeight && "margintop: ${StatusBar.currentHeight}px"};
 `;
 
-const SearchContainer = styled(View)`
+const SearchContainer = styled.View`
   background-color: ${(props) => props.theme.colors.bg.primary};
   padding: ${(props) => props.theme.space[2]};
 `;
 
-const RestuarantListContainer = styled(View)`
+const RestuarantListContainer = styled.View`
   flex: 1;
   background-color: ${(props) => props.theme.colors.bg.primary};
   padding: ${(props) => props.theme.space[2]};
