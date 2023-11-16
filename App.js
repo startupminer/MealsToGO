@@ -4,6 +4,10 @@ import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { RestaurantScreen } from "./src/features/restuarants/screens/restaurant.screen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
+// Temp import to test request response
+import { restuarantsRequest } from "./src/services/restuarants/restuarants.service";
 
 import {
   useFonts as useOswald,
@@ -40,9 +44,36 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <NavigationContainer>
           <Tab.Navigator>
-            <Tab.Screen name="Restuarants" component={RestaurantScreen} />
-            <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
+            <Tab.Screen
+              name="Restuarants"
+              component={RestaurantScreen}
+              options={{
+                tabBarIcon: ({ color, size }) => (
+                  <Ionicons name="md-restuarants" size={32} color="red" />
+                ),
+                tabBarActiveTintColor: "blue",
+              }}
+            />
+            <Tab.Screen
+              name="Map"
+              component={MapScreen}
+              options={{
+                tabBarIcon: ({ color, size }) => (
+                  <Ionicons name="md-map" size={32} color="red" />
+                ),
+                tabBarActiveTintColor: "blue",
+              }}
+            />
+            <Tab.Screen
+              name="Settings"
+              component={SettingsScreen}
+              options={{
+                tabBarIcon: ({ color, size }) => (
+                  <Ionicons name="md-settings" size={32} color="red" />
+                ),
+                tabBarActiveTintColor: "blue",
+              }}
+            />
           </Tab.Navigator>
         </NavigationContainer>
       </ThemeProvider>
