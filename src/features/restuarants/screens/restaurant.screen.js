@@ -1,7 +1,8 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { View, SafeAreaView, StatusBar } from "react-native";
 import { Searchbar } from "react-native-paper";
 import styled from "styled-components";
+import { RestuarantContext } from "../../../services/restuarants/restuarants.context";
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -19,17 +20,22 @@ const RestuarantListContainer = styled.View`
   padding: ${(props) => props.theme.space[2]};
 `;
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
-export const RestaurantScreen = () => (
-  <SafeArea>
-    <SearchContainer>
-      <Searchbar />
-    </SearchContainer>
 
-    <RestuarantListContainer>
-      <RestaurantInfoCard />
-    </RestuarantListContainer>
-  </SafeArea>
-);
+export const RestaurantScreen = () => {
+  const restuarantContext = useContext(RestuarantContext);
+  console.log(restuarantContext);
+  return (
+    <SafeArea>
+      <SearchContainer>
+        <Searchbar />
+      </SearchContainer>
+
+      <RestuarantListContainer>
+        <RestaurantInfoCard />
+      </RestuarantListContainer>
+    </SafeArea>
+  );
+};
 
 // const styles = StyleSheet.create({
 //   container: {

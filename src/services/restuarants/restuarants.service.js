@@ -1,23 +1,23 @@
-import { mocks } from "./restuarants.context";
+import { mocks } from "./mock/mock.js";
 import camelize from "camelize";
 // Get restuarants data from the mock service
 export const restuarantsRequest = (location = "37.7749295,-122.4194155") => {
   console.log(mocks[location]);
   // Promise returns a function internally that has a resolve and reject function
   return new Promise((resolve, reject) => {
-    const mocks = mocks[location];
-    if (!mocks) {
+    const mockData = mocks[location];
+    if (!mockData) {
       reject("No mocks for location");
     }
     // if we have the mock, then resolve
-    resolve(mocks);
+    resolve(mockData);
   });
 };
 
-const restaurantTransform = (result) => {
+export const restaurantTransform = (result) => {
   // Camelize library transforms api response and recursively makes object fields camel case
   const mappedResults = result.map((restuarant) => {
-    // return original restuarants data and add two new properties - isOpenNow and isClosedTemporarily
+    // return original restuarants data and additional properties - isOpenNow and isClosedTemporarily
     return {
       ...restuarant,
       isOpenNow: restuarant.opening_hours && restuarant.opening_hours.isOpenNow,
