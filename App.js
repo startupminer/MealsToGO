@@ -14,6 +14,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 // Temp import to test request response
 import { restuarantsRequest } from "./src/services/restuarants/restuarants.service";
 import { RestuarantContextProvider } from "./src/services/restuarants/restuarants.context";
+import { LocationProviderContext } from "./src/services/locations/location.context";
 
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
@@ -43,6 +44,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         {/* All navigation now has access to the restuarants */}
+        {/* <LocationProviderContext> */}
         <RestuarantContextProvider>
           <NavigationContainer>
             <Tab.Navigator>
@@ -79,6 +81,7 @@ export default function App() {
             </Tab.Navigator>
           </NavigationContainer>
         </RestuarantContextProvider>
+        {/* </LocationProviderContext> */}
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
